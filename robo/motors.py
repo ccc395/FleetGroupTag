@@ -17,6 +17,9 @@ GPIO.setup("P9_12", GPIO.OUT); GPIO.output("P9_12", GPIO.LOW)
 GPIO.setup("P9_13", GPIO.OUT); GPIO.output("P9_13", GPIO.LOW)
 GPIO.setup("P9_15", GPIO.OUT); GPIO.output("P9_15", GPIO.LOW)
 
+#Setup the ADC
+ADC.setup()
+
 #Forward
 PWM.set_duty_cycle("P9_16", 50)
 PWM.set_duty_cycle("P9_14", 50)
@@ -38,8 +41,7 @@ PWM.stop("P9_14")
 GPIO.cleanup()
 PWM.cleanup()
 
-#Setup the ADC
-ADC.setup()
+
 print "Test IR Sensor"
 i=0
 while i <= 0:
