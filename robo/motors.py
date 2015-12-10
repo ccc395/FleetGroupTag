@@ -25,6 +25,11 @@ GPIO.output("P9_13", GPIO.HIGH)
 GPIO.output("P9_15", GPIO.LOW)
 GPIO.output("P9_11", GPIO.HIGH)
 GPIO.output("P9_12", GPIO.LOW)
+value = ADC.read("P9_37")
+if value > 4000:
+	PWM.stop("P9_16")
+	PWM.stop("P9_14")
+
 raw_input('Press enter to stop')
 PWM.stop("P9_16")
 PWM.stop("P9_14")
